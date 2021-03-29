@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const userRoute = require('./routes/user-route');
+const movieRoute = require('./routes/movie-router');
 
 
 app.use(morgan('dev'));
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 
 
 app.use('/users', userRoute);
+app.use('/movie', movieRoute)
 
 
 app.use((req, res, next) => {
