@@ -61,3 +61,10 @@ exports.Login = async (req, res, next) => {
             return res.status(500).send({mensagem: "Falha na autenticação"});
         }
 };
+
+exports.Logout = async(req, res, next) =>{
+            
+            delete req.session.user;
+
+            res.redirect('/movie');    
+}
